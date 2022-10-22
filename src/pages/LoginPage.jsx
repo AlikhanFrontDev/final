@@ -7,7 +7,7 @@ import '../css/rootCss.css'
 import AuthService from '../service/AuthService'
 
 export default function LoginPage() {
-  const [login, setUsername] = useState("");
+const [login, setUsername] = useState("");
 const [password, setPassword] = useState("");
 
     const supernavigate = useNavigate();

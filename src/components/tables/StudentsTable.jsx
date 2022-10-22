@@ -8,9 +8,10 @@ import '../../css/table.css'
 // import '../../css/rootCss.css'
 import '../../css/toggleModal.css'
 import TeacherAddForm from '../forms/TeacherAddForm';
+import AddStudent from '../forms/AddStudent';
 
 
-export default function TeacherTable() {
+export default function StudentsTable() {
     const [data, setData] = useState([]);
     const [query, setQuery] = useState("")
     const [modal, setModal] = useState(false);
@@ -18,7 +19,7 @@ export default function TeacherTable() {
         const token = JSON.parse(localStorage.getItem("userRole"));
         const fetchData = async () => {
             try {
-                const { data: response } = await axios.get(Endpoint + 'users/show/teachers', { headers: { "Authorization": `Bearer ${token}` } });
+                const { data: response } = await axios.get(Endpoint + 'users/show/students', { headers: { "Authorization": `Bearer ${token}` } });
                 setData(response);
                 console.log(response)
             } catch (error) {
@@ -59,7 +60,7 @@ export default function TeacherTable() {
                         return post;
                     }
                 }).map((data) => (
-                    <Link to={`/teacher/${data.id}`} className='link'>
+                    <Link to={`/student/${data.id}`} className='link'>
 
                         <div className="box" key={data.id}>
 
@@ -90,7 +91,7 @@ export default function TeacherTable() {
                         <div className="modal">
                             <div onClick={toggleModal} className="overlay"></div>
                             <div className="modal-content">
-                                <TeacherAddForm/>
+                                <AddStudent/>
                             </div>
                         </div>
                     </div>

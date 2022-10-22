@@ -8,9 +8,10 @@ import '../../css/table.css'
 // import '../../css/rootCss.css'
 import '../../css/toggleModal.css'
 import TeacherAddForm from '../forms/TeacherAddForm';
+import AddCashier from '../forms/AddCashier';
 
 
-export default function TeacherTable() {
+export default function CashierTable() {
     const [data, setData] = useState([]);
     const [query, setQuery] = useState("")
     const [modal, setModal] = useState(false);
@@ -18,7 +19,7 @@ export default function TeacherTable() {
         const token = JSON.parse(localStorage.getItem("userRole"));
         const fetchData = async () => {
             try {
-                const { data: response } = await axios.get(Endpoint + 'users/show/teachers', { headers: { "Authorization": `Bearer ${token}` } });
+                const { data: response } = await axios.get(Endpoint + 'users/show/cashiers', { headers: { "Authorization": `Bearer ${token}` } });
                 setData(response);
                 console.log(response)
             } catch (error) {
@@ -59,14 +60,14 @@ export default function TeacherTable() {
                         return post;
                     }
                 }).map((data) => (
-                    <Link to={`/teacher/${data.id}`} className='link'>
+                    <Link to={`/cashier/${data.id}`} className='link'>
 
                         <div className="box" key={data.id}>
 
                             <div className='card border-radius' >
                                 <div className='top'>
                                     <div className='user'>
-                                        <img className='userImageCard border-radius' src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
+                                        {/* <img className='userImageCard border-radius' src="https://media.herworld.com/public/2019/03/image/lisa_rec.png?compress=true&quality=80&w=400&dpr=2.6" alt="" /> */}
                                         {/* <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000" alt="" /> */}
                                     </div>
                                     <div className='info'>
@@ -90,7 +91,7 @@ export default function TeacherTable() {
                         <div className="modal">
                             <div onClick={toggleModal} className="overlay"></div>
                             <div className="modal-content">
-                                <TeacherAddForm/>
+                                <AddCashier/>
                             </div>
                         </div>
                     </div>
