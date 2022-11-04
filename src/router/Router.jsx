@@ -33,35 +33,35 @@ export default function Router() {
     return (
         <div>
             <Routes>
-                <Route path='/' exact element={<LoginPage />} />
+                <Route path='/final' exact element={<LoginPage />} />
 
-                <Route path='/' exact element={<ProtectedRouteCashier />}>
-                    <Route path='/teachers' element={<TeacherC />} />
-                    <Route path='/students' element={<StudentC />} />
-                    <Route path='/admins' element={<AdminC />} />
-                    <Route path='/cashiers' element={<CashierC />} />
-                    <Route path='/employees' element={<EmployeesC />} />
-                    <Route path='/debtors' element={<DeptorsC />} />
+                <Route path='/final' exact element={<ProtectedRouteCashier />}>
+                    <Route path='/final/teachers' element={<TeacherC />} />
+                    <Route path='/final/students' element={<StudentC />} />
+                    <Route path='/final/admins' element={<AdminC />} />
+                    <Route path='/final/cashiers' element={<CashierC />} />
+                    <Route path='/final/employees' element={<EmployeesC />} />
+                    <Route path='/final/debtors' element={<DeptorsC />} />
                 </Route>
                 <Route path='/final' exact element={<SuperAdminProtectedRouting />}>
-                    <Route path='/dashboard' element={<Dashboard />} />
-                    <Route path='/admin' element={<AdminsPage />} />
-                    <Route path='/admin/:id' element={<SingleAdmin />} />
-                    <Route path='/report' element={<ReportsPage />} />
-                    <Route path='/cashier' element={<CashierPage />} />
-                    <Route path='/cashier/:id' element={<SingleCashier />} />
-                    <Route path='/employee' element={<Employee />} />
+                    <Route path='/final/dashboard' element={<Dashboard />} />
+                    <Route path='/final/admin' element={<AdminsPage />} />
+                    <Route path='/final/admin/:id' element={<SingleAdmin />} />
+                    <Route path='/final/report' element={<ReportsPage />} />
+                    <Route path='/final/cashier' element={<CashierPage />} />
+                    <Route path='/final/cashier/:id' element={<SingleCashier />} />
+                    <Route path='/final/employee' element={<Employee />} />
                 </Route>
-                <Route path='/' exact element={<ProtectedRoutingAdmin />}>
-                    <Route path='/group' element={<GroupPage />} />
-                    <Route path='/group/:id' element={<SingleGroup />} />
-                    <Route path='/teacher' element={<TeacherPage />} />
-                    <Route path='/teacher/:id' element={<SingleTeacher />} />
-                    <Route path='/schedule' element={<SchedulePage />} />
-                    <Route path='/student' element={<StudentPage />} />
-                    <Route path='/student/:id' element={<SingleStudent />} />
-                    <Route path='/room' element={<Rooms />} />
-                    <Route path='/lid' element={<Lid />} />
+                <Route path='/final' exact element={<ProtectedRoutingAdmin />}>
+                    <Route path='/final/group' element={<GroupPage />} />
+                    <Route path='/final/group/:id' element={<SingleGroup />} />
+                    <Route path='/final/teacher' element={<TeacherPage />} />
+                    <Route path='/final/teacher/:id' element={<SingleTeacher />} />
+                    <Route path='/final/schedule' element={<SchedulePage />} />
+                    <Route path='/final/student' element={<StudentPage />} />
+                    <Route path='/final/student/:id' element={<SingleStudent />} />
+                    <Route path='/final/room' element={<Rooms />} />
+                    <Route path='/final/lid' element={<Lid />} />
                 </Route>
             </Routes>
         </div>

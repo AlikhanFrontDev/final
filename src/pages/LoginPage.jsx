@@ -29,13 +29,13 @@ const handleLogin = async (e) => {
                 const userrole = roleName.roles
 
                 if (userrole === "SUPER_ADMIN") {
-                    supernavigate('/dashboard')
+                    supernavigate('/final/dashboard')
                 }
                 else if (userrole === "ADMIN") {
-                    adminnavigate('/schedule')
+                    adminnavigate('/final/schedule')
                 }
                 else if (userrole === "CASHIER") {
-                    cashiernavigate('/debtors')
+                    cashiernavigate('/final/debtors')
                 }
                 else {
                     noUserNavigate("/")
